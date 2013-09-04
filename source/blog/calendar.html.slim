@@ -3,7 +3,8 @@ pageable: true
 ---
 
 ruby:
-  period = case page_type
+  t = respond_to?(:page_type) ? page_type : ''
+  period = case t
     when 'day'
       Date.new(year, month, day).strftime('%b %e %Y')
     when 'month'

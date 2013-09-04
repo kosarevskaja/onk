@@ -4,8 +4,6 @@ helpers DateTimeHelpers
 
 Time.zone = 'Europe/Moscow'
 
-activate :syntax
-
 # Blog settings
 activate :blog do |blog|
   blog.prefix            = 'blog'
@@ -24,8 +22,8 @@ activate :blog do |blog|
   # blog.per_page = 10
   # blog.page_link = "page/:num"
 
-  blog.tag_template      = 'tag.html'
-  blog.calendar_template = 'calendar.html'
+  blog.tag_template      = 'blog/tag.html'
+  blog.calendar_template = 'blog/calendar.html'
   blog.default_extension = '.html.markdown.erb'
 end
 
@@ -138,7 +136,7 @@ helpers do
   end
 
   def disqus_comments(opts = {})
-    return nil unless data.disqus.site_id
+    return nil unless data.disqus && data.disqus.site_id
     opts = {
         site_id: data.disqus.site_id,
     }.merge(opts)
