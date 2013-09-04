@@ -15,7 +15,7 @@ ruby:
 h1
   ' Archive for #{period}
 
-= partial 'pagination_top'
+= partial 'blog/pagination_top'
 
 ul.list-group
   - page_articles.each_with_index do |article, i|
@@ -24,4 +24,4 @@ ul.list-group
       = ' '
       .badge= article.date.strftime('%b %e')
 
-= partial 'pagination_bottom'
+= partial 'blog/pagination_bottom'
