@@ -6,9 +6,9 @@ header.navbar.navbar-inverse: .container
       span.icon-bar
       span.icon-bar
     .navbar-brand
-      a href='/'
+      a href=root_url
         = data.site.title
   nav.collapse.navbar-collapse.bs-navbar-collapse.nav-default
     ul.nav.navbar-nav
       li class=('active' if current_page.path == 'index.html')
-        = link_to 'Index', '/'
+        = link_to 'Index', root_url
