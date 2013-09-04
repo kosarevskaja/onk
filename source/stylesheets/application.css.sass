@@ -1,0 +1,189 @@
+$brand-primary: #1b7c4a
+
+$body-bg: lighten(#dddc8c, 15%)
+$text-color: darken(#4f6066, 5%)
+
+$navbar-height: 45px
+$navbar-inverse-link-color: #ebe7ae
+$navbar-inverse-color: $brand-primary
+$navbar-inverse-bg: darken($brand-primary, 12%)
+$navbar-inverse-link-color: white
+$navbar-inverse-link-hover-color: lighten($navbar-inverse-link-color, 10%)
+$navbar-inverse-link-hover-bg: lighten($navbar-inverse-bg, 10%)
+$navbar-inverse-brand-color: #ebd7b3
+$navbar-inverse-toggle-hover-bg: $navbar-inverse-link-hover-bg
+$navbar-inverse-toggle-border-color: rgba(darken($navbar-inverse-bg, 10%), 0.7)
+
+$btn-default-bg: lighten($body-bg, 14%)
+$btn-default-color: darken($brand-primary, 25%)
+
+@import 'bootstrap'
+@import 'bootstrap/theme'
+@import 'date_time'
+@import 'syntax-highlight'
+@import 'fonts'
+
+@mixin font-sans
+  font-family: 'Lato', sans-serif
+@mixin font-serif
+  font-family: 'Fenix', serif
+@mixin font-body
+  +font-serif
+@mixin font-h
+  +font-sans
+  font-weight: 700
+
+.navbar-inverse
+  border-radius: 0
+  box-shadow: 0 2px 3px rgba(0,0,0,.25)
+  +font-h
+  .navbar-nav > li > a, .navbar-brand a
+    color: $navbar-inverse-link-color !important
+    font-weight: normal !important
+    text-shadow: none
+    &:hover
+      color: $navbar-inverse-link-hover-color
+      background-color: $navbar-inverse-link-hover-bg
+  .navbar-brand
+    +font-serif
+    font-weight: normal
+    font-size: 22px
+aside
+  @extend .text-center
+  .person-img
+    margin: 0 auto
+    display: inline-block
+    overflow: hidden
+    @extend .img-circle
+    border: 10px solid white
+    width: 180px
+    height: 180px
+  img
+    @extend .img-responsive
+
+.panel
+  padding: 20px
+  border: 0
+
+.panel-default
+  background-color: lighten($body-bg, 10%)
+
+.panel-info
+  background-color: rgba(lighten($body-bg, 5%), 0.8)
+  border: none
+
+article, .comments
+  @extend .panel
+  @extend .panel-default
+
+.article-footer
+  @extend .panel-footer
+  @extend .row
+  margin: 0 -20px -20px -20px
+  .suggest-edit
+    @extend .pull-right
+  .permalink
+    @extend .pull-left
+    label
+      display: inline-block
+      @extend small
+      margin-right: 10px
+    input
+      display: inline-block
+      width: 350px
+      max-width: 75%
+
+aside
+  @extend .panel
+  @extend .panel-info
+
+
+@mixin lined-paper-bg
+  background-image: linear-gradient(rgba($text-color, 0.1) .1em, transparent .1em)
+  background-size: 100% 19px
+
+
+hr
+  border-top: 0
+  border-left: 0
+  border-bottom: 1px dashed darken($body-bg, 40%)
+  border-right: 0
+  margin: 14px 20px
+
+body
+  font-size: medium
+  +font-body
+  color: $text-color
+  background-color: $body-bg
+  +lined-paper-bg
+h1, h2, h3, h4
+  +font-h
+  color: darken($brand-primary, 6%)
+.btn
+  +font-h
+a
+  color: lighten($brand-primary, 10%)
+::selection
+  background-color: rgba(lighten($brand-primary, 40%), 0.41)
+.badge
+  background-color: darken($brand-primary, 10%)
+
+
+.article-layout
+  margin-top: -20px
+  > .blog-article
+    border-top-right-radius: 0
+    border-top-left-radius: 0
+  @media (max-width: $screen-xs)
+    margin-top: 0
+
+.blog-article
+  > h1, > h2
+    margin-top: 4px
+  > h1
+    margin-bottom: 20px
+  > h2
+    margin-bottom: 14px
+  .article-date
+    float: right
+    color: rgba($text-color, 0.85)
+    +font-sans
+    margin-top: 4px
+    margin-right: -4px
+    right: 100%
+    @media (max-width: $screen-xs)
+      margin-bottom: -17px
+      margin-right: -8px
+
+@media (max-width: $screen-xs)
+  header.navbar
+    margin-bottom: 0
+  body
+    > .container
+      padding: 0
+      > .row
+        margin: 0
+        [class^='col-']
+          padding: 0
+  article code
+    white-space: normal
+
+@media (max-width: $screen-sm)
+  body
+    .blog-article > h1, .blog-article > h2
+      font-size: 26px
+    h3
+      font-size: 20px
+  aside
+    font-size: 18px
+
+@media (min-width: $screen-sm)
+  body
+    .blog-article > h1, .blog-article > h2
+      font-size: 32px
+    h3
+      font-size: 24px
+
+@media (min-width: $screen-lg)
+  .blog-article
+    padding: 20px 30px

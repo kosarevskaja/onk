@@ -1,0 +1,28 @@
+doctype html
+= "\n"
+html
+  head
+    meta charset="utf-8" 
+    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = favicon_tag 'favicon.ico'
+    link rel="alternate" type="application/atom+xml" title="#{data.site.title} Feed" href=atom_feed_url
+    title = content_for?(:page_title) ? yield_content(:page_title) : data.site.title
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
+    = javascript_include_tag 'application'
+    = "\n"
+  body
+    = google_analytics_js
+
+    -# Header
+    = partial 'header'
+
+    -# Body
+    .container: .row
+      -# Main content
+      .col-md-9.col-lg-9
+        #main role='main' = yield
+
+      -# Sidebar
+      .col-md-3 = partial 'sidebar'
