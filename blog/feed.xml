@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ОНК</title>
+  <subtitle>Координация действий против произвола УФМС и других государственных органов.</subtitle>
+  <id>http://test.com/</id>
+  <link href="http://test.com/"/>
+  <link href="http://test.com/blog/feed.xml" rel="self"/>
+</feed>
