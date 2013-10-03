@@ -1,0 +1,7 @@
+- categories.each do |cat|
+  - if cat[:title].present?
+    h3 = cat[:title]
+  - if cat[:items].present?
+    ul
+      - cat[:items].each do |item|
+        li = link_to item[:title], google_document_path(cat, item)

@@ -190,7 +190,7 @@ helpers do
 end
 
 
-data.google_documents.each do |category|
+data.google_documents.map { |group_key, group| group[:items] }.flatten.each do |category|
   category[:items].each do |item|
     proxy "#{google_document_path(category, item)}", "/google_document.html",
           locals: {category: category, item: item}, ignore: true

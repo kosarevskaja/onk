@@ -1,11 +1,23 @@
-- title: Секция А
+---
+onk:
+  title: ONK
   items:
-    - title: Виды деятельности ОНК
-      key: 0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE
-
-- title: Секция B
+    - title: Методические пособия
+      items:
+        - title: Виды деятельности ОНК
+          key: 0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE
+        - title: Виды деятельности ОНК 2
+          key: 0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE
+    - title: Методические пособия 2
+      items:
+        - title: Виды деятельности ОНК
+          key: 0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE
+other:
+  title: Drugoe
   items:
-    - title: Виды деятельности ОНК
-      key: 0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE
+    - title: Секция B
+      items:
+        - title: Виды деятельности ОНК
+          key: 0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE
 
 

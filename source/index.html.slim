@@ -3,13 +3,10 @@ pageable: true
 per_page: 10
 ---
 
-.panel.panel-default
-  - data.google_documents.each do |cat|
-    - if cat[:title].present?
-      h3 = cat[:title]
-    - if cat[:items].present?
-      ul
-        - cat[:items].each do |item|
-          li = link_to item[:title], google_document_path(cat, item)
+.panel.panel-default: .row
+  .col-md-6
+    = partial 'docs_list', locals: {categories: data.google_documents[:onk][:items]}
+  .col-md-6
+    = partial 'docs_list', locals: {categories: data.google_documents[:other][:items]}
 
 = partial 'blog/blog_articles_list'
