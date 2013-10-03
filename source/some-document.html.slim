@@ -1,0 +1,12 @@
+---
+title: Виды деятельности ОНК
+---
+
+- content_for :page_title, current_page.data.title
+- external_url = "https://docs.google.com/spreadsheet/ccc?key=0AqI37f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE&usp=drive_web#gid=0"
+- embed_url = "https://docs.google.com/spreadsheet/pub?key=0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE&output=html"
+
+a href=external_url target="_blank"
+  | Open #{current_page.data.title} on Google Docs
+
+iframe src=embed_url width="100%" height="500" style="border: none;" seamless="seamless"/
