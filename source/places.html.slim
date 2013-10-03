@@ -1,0 +1,8 @@
+- places = data.google_documents[:places]
+
+- content_for :page_title, places[:title]
+
+h1 = places[:title]
+.panel.panel-default: .row
+  .col-md-6
+    = partial 'docs_list', locals: {categories: places[:items]}

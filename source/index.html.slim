@@ -1,12 +1,7 @@
----
-pageable: true
-per_page: 10
----
+- onk_docs = data.google_documents[:onk]
+- content_for :page_title, onk_docs[:title]
 
+h1 = onk_docs[:title]
 .panel.panel-default: .row
   .col-md-6
-    = partial 'docs_list', locals: {categories: data.google_documents[:onk][:items]}
-  .col-md-6
-    = partial 'docs_list', locals: {categories: data.google_documents[:other][:items]}
-
-= partial 'blog/blog_articles_list'
+    = partial 'docs_list', locals: {categories: onk_docs[:items]}

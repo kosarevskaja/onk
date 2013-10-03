@@ -12,8 +12,8 @@ onk:
       items:
         - title: Виды деятельности ОНК
           key: 0AqIa7f2a3cWWdGJMcTlPTElIVmxlOGxLMVNUOFkyRkE
-other:
-  title: Drugoe
+places:
+  title: Mesta bla....
   items:
     - title: Секция B
       items:

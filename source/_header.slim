@@ -12,7 +12,10 @@ header.navbar.navbar-inverse: .container
     ul.nav.navbar-nav
       li class=('active' if current_page.path == 'index.html')
         a href=root_url
-          | #{glyphicon 'list-alt'} Документы
+          | #{glyphicon 'list-alt'} ONK
+      li class=('active' if current_page.path == 'places.html')
+        a href='/places.html'
+          | #{glyphicon 'list-alt'} Mesta bla-bla
       li
         a href="https://mapsengine.google.com/map/edit?mid=z46fcgQXOSx8.kSSL_C5A5l-4" target="_blank"
           | #{glyphicon 'map-marker'} Карта
