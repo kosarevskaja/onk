@@ -11,4 +11,8 @@ header.navbar.navbar-inverse: .container
   nav.collapse.navbar-collapse.bs-navbar-collapse.nav-default
     ul.nav.navbar-nav
       li class=('active' if current_page.path == 'index.html')
-        = link_to 'Index', root_url
+        a href=root_url
+          | #{glyphicon 'list-alt'} Документы
+      li
+        a href="https://mapsengine.google.com/map/edit?mid=z46fcgQXOSx8.kSSL_C5A5l-4" target="_blank"
+          | #{glyphicon 'map-marker'} Карта
