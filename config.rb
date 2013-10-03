@@ -176,7 +176,27 @@ helpers do
       ga('send', 'pageview');
     JS
   end
+
+  def parameterize_ru(title)
+    (title || '').to_slug.transliterate(:russian).tr(' ', '-').presence
+  end
+
+  def google_document_path(category, item)
+    #require 'byebug'; byebug
+    category_slug = parameterize_ru category[:title]
+    item_slug = parameterize_ru item[:title] || ''
+    '/docs/' + [category_slug, "#{item_slug}.html"].compact * '/'
+  end
 end
+
+
+data.google_documents.each do |category|
+  category[:items].each do |item|
+    proxy "#{google_document_path(category, item)}", "/google_document.html",
+          locals: {category: category, item: item}, ignore: true
+  end
+end
+
 
 set :css_dir, 'stylesheets'
 

@@ -11,8 +11,14 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'nokogiri'
 
+# url slugs
+gem 'babosa'
+
+
 # For feed.xml.builder
 gem 'builder', '~> 3.0.0'
 
 gem 'middleman-gh-pages'
 gem 'byebug', platforms: :ruby_20
+
+

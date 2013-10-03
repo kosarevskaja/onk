@@ -12,6 +12,7 @@ GEM
     activesupport (3.2.14)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    babosa (0.3.11)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -137,6 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  babosa
   better_errors
   binding_of_caller
   bootstrap-sass!

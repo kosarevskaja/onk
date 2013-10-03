@@ -1,0 +1,11 @@
+- content_for :page_title, [item[:title], category[:title], data.site.title].join(' - ')
+
+ruby:
+  external_url = "https://docs.google.com/spreadsheet/ccc?key=#{item[:key]}&usp=drive_web#gid=0"
+  embed_url = "https://docs.google.com/spreadsheet/pub?key=#{item[:key]}&output=html"
+
+.row
+  .pull-right: a href=external_url target="_blank"
+    | #{glyphicon 'new-window'} #{current_page.data.title} на Google Docs
+
+iframe src=embed_url width="100%" style="border: none; min-height: 600px" iframe-autosize='' seamless='seamless'/
